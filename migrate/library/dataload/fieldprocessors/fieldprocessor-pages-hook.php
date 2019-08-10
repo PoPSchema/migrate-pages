@@ -1,7 +1,7 @@
 <?php
 namespace PoP\Pages;
 
-class FieldValueResolver_Pages_Hook extends \PoP\Engine\AbstractDBDataFieldValueResolverExtension
+class FieldValueResolver_Pages_Unit extends \PoP\Engine\AbstractDBDataFieldValueResolverUnit
 {
     public static function getClassesToAttachTo()
     {
@@ -29,4 +29,4 @@ class FieldValueResolver_Pages_Hook extends \PoP\Engine\AbstractDBDataFieldValue
 }
 
 // Static Initialization: Attach
-FieldValueResolver_Pages_Hook::attach();
+FieldValueResolver_Pages_Unit::attach();
