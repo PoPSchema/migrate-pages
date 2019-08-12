@@ -15,7 +15,7 @@ class PoP_Pages_Module_EntryRouteModuleProcessor extends \PoP\ModuleRouting\Abst
     }
     public static function getRESTFieldsQuery() {
         if (is_null(self::$restFieldsQuery)) {
-            $restFieldsQuery = 'id|title|url';
+            $restFieldsQuery = 'id|title|url|content';
             self::$restFieldsQuery = HooksAPIFacade::getInstance()->applyFilters(
                 'Pages:RESTFields',
                 $restFieldsQuery
