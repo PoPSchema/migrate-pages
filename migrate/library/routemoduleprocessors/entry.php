@@ -29,7 +29,7 @@ class PoP_Pages_Module_EntryRouteModuleProcessor extends \PoP\ModuleRouting\Abst
         $ret = array();
 
         // API
-        if (!\PoP\Engine\Server\Utils::disableAPI()) {
+        if (!\PoP\ComponentModel\Server\Utils::disableAPI()) {
             $vars = \PoP\ComponentModel\Engine_Vars::getVars();
             
             // Page
