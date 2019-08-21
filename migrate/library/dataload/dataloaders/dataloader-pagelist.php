@@ -4,7 +4,7 @@ use PoP\Hooks\Facades\HooksAPIFacade;
 
 class Dataloader_PageList extends Dataloader_PageBase
 {
-    use \PoP\Engine\Dataloader_ListTrait;
+    use \PoP\ComponentModel\Dataloader_ListTrait;
 
     /**
      * Function to override

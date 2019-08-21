@@ -7,7 +7,7 @@ class PoP_Pages_Module_EntryRouteModuleProcessor extends \PoP\ModuleRouting\Abst
     private static $restFields;
     public static function getRESTFields() {
         if (is_null(self::$restFields)) {
-            self::$restFields = \PoP\Engine\Utils::maybeConvertDotNotationToArray(
+            self::$restFields = \PoP\ComponentModel\Utils::maybeConvertDotNotationToArray(
                 self::getRESTFieldsQuery()
             );
         }
@@ -30,7 +30,7 @@ class PoP_Pages_Module_EntryRouteModuleProcessor extends \PoP\ModuleRouting\Abst
 
         // API
         if (!\PoP\Engine\Server\Utils::disableAPI()) {
-            $vars = \PoP\Engine\Engine_Vars::getVars();
+            $vars = \PoP\ComponentModel\Engine_Vars::getVars();
             
             // Page
             $ret[POP_NATURE_PAGE][] = [

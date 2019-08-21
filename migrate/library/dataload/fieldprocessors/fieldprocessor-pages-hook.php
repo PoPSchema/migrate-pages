@@ -1,7 +1,7 @@
 <?php
 namespace PoP\Pages;
 
-class FieldValueResolver_Pages_Unit extends \PoP\Engine\AbstractDBDataFieldValueResolverUnit
+class FieldValueResolver_Pages_Unit extends \PoP\ComponentModel\AbstractDBDataFieldValueResolverUnit
 {
     public static function getClassesToAttachTo()
     {

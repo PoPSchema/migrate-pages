@@ -1,6 +1,6 @@
 <?php
 
-class PoP_Pages_Module_Processor_FieldDataloads extends \PoP\Engine\PoP_Module_Processor_RelationalFieldDataloadsBase
+class PoP_Pages_Module_Processor_FieldDataloads extends \PoP\ComponentModel\PoP_Module_Processor_RelationalFieldDataloadsBase
 {
     public const MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS = 'dataload-dataquery-page-fields';
 

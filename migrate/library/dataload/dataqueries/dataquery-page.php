@@ -3,7 +3,7 @@ namespace PoP\Pages;
 
 define('GD_DATAQUERY_PAGE', 'post');
 
-class DataQuery_Page extends \PoP\Engine\DataQueryBase
+class DataQuery_Page extends \PoP\ComponentModel\DataQueryBase
 {
     public function getName()
     {

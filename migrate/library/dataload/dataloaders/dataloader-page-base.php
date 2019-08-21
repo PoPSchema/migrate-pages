@@ -1,7 +1,7 @@
 <?php
 namespace PoP\Pages;
 
-abstract class Dataloader_PageBase extends \PoP\Engine\QueryDataDataloader
+abstract class Dataloader_PageBase extends \PoP\ComponentModel\QueryDataDataloader
 {
     public function getDataquery()
     {

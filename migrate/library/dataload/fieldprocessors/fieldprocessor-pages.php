@@ -1,8 +1,8 @@
 <?php
 namespace PoP\Pages;
-use PoP\Engine\Utils;
+use PoP\ComponentModel\Utils;
 
-class FieldValueResolver_Pages extends \PoP\Engine\FieldValueResolverBase
+class FieldValueResolver_Pages extends \PoP\ComponentModel\FieldValueResolverBase
 {
     public function getId($resultitem)
     {

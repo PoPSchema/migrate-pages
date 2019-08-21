@@ -3,10 +3,10 @@ use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\Hooks\Facades\HooksAPIFacade;
 
 HooksAPIFacade::getInstance()->addFilter(
-    \PoP\Engine\ModelInstance\ModelInstance::HOOK_COMPONENTS_RESULT, 
+    \PoP\ComponentModel\ModelInstance\ModelInstance::HOOK_COMPONENTS_RESULT, 
     function ($components) {
 
-        $vars = \PoP\Engine\Engine_Vars::getVars();
+        $vars = \PoP\ComponentModel\Engine_Vars::getVars();
         switch ($vars['nature']) {
             case POP_NATURE_PAGE:
                 $component_types = HooksAPIFacade::getInstance()->applyFilters(
