@@ -32,9 +32,9 @@ class FieldValueResolver_Pages_Unit extends \PoP\ComponentModel\AbstractDBDataFi
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-			'title' => $translationAPI->__('', ''),
-            'content' => $translationAPI->__('', ''),
-            'url' => $translationAPI->__('', ''),
+			'title' => $translationAPI->__('Page\'s title', 'pop-pages'),
+            'content' => $translationAPI->__('Page\'s content', 'pop-pages'),
+            'url' => $translationAPI->__('Page\'s URL', 'pop-pages'),
         ];
         return $descriptions[$fieldName];
     }
