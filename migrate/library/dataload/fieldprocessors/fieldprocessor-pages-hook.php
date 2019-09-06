@@ -12,14 +12,18 @@ class FieldValueResolver_Pages_Unit extends \PoP\ComponentModel\AbstractDBDataFi
     public function getFieldNamesToResolve(): array
     {
         return [
-			
+			'title',
+            'content',
+            'url',
         ];
     }
 
     public function getFieldDocumentationType(string $fieldName): ?string
     {
         $types = [
-			
+			'title' => TYPE_STRING,
+            'content' => TYPE_STRING,
+            'url' => TYPE_URL,
         ];
         return $types[$fieldName];
     }
@@ -28,7 +32,9 @@ class FieldValueResolver_Pages_Unit extends \PoP\ComponentModel\AbstractDBDataFi
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-			
+			'title' => $translationAPI->__('', ''),
+            'content' => $translationAPI->__('', ''),
+            'url' => $translationAPI->__('', ''),
         ];
         return $descriptions[$fieldName];
     }
