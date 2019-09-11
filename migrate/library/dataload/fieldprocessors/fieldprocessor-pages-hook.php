@@ -44,7 +44,6 @@ class FieldValueResolver_Pages_Unit extends \PoP\ComponentModel\AbstractDBDataFi
         $cmspagesapi = \PoP\Pages\FunctionAPIFactory::getInstance();
         $page = $resultitem;
         switch ($fieldName) {
-
             case 'title':
                 return $cmspagesapi->getTitle($fieldValueResolver->getId($page));
 
