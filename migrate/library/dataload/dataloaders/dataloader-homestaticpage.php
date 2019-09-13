@@ -3,7 +3,7 @@ namespace PoP\Pages;
 
 class Dataloader_HomeStaticPage extends Dataloader_PageBase
 {
-    public function getDbobjectIds($data_properties)
+    public function getDBObjectIDOrIDs($data_properties)
     {
         $cmspagesapi = \PoP\Pages\FunctionAPIFactory::getInstance();
         if ($page_id = $cmspagesapi->getHomeStaticPage()) {
