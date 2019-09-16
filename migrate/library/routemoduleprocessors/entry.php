@@ -1,22 +1,26 @@
 <?php
 use PoP\Hooks\Facades\HooksAPIFacade;
+use PoP\ComponentModel\FieldUtils;
 
 class PoP_Pages_Module_EntryRouteModuleProcessor extends \PoP\ModuleRouting\AbstractEntryRouteModuleProcessor
 {
     private static $restFieldsQuery;
     private static $restFields;
-    public static function getRESTFields() {
+    public static function getRESTFields(): array
+    {
         if (is_null(self::$restFields)) {
-            self::$restFields = \PoP\ComponentModel\FieldUtils::maybeConvertDotNotationToArray(
-                self::getRESTFieldsQuery()
-            );
+            self::$restFields = self::getRESTFieldsQuery();
+            if (is_string(self::$restFields)) {
+                self::$restFields = FieldUtils::convertAPIQueryFromStringToArray(self::$restFields);
+            }
         }
         return self::$restFields;
     }
-    public static function getRESTFieldsQuery() {
+    public static function getRESTFieldsQuery(): string
+    {
         if (is_null(self::$restFieldsQuery)) {
             $restFieldsQuery = 'id|title|url|content';
-            self::$restFieldsQuery = HooksAPIFacade::getInstance()->applyFilters(
+            self::$restFieldsQuery = (string) HooksAPIFacade::getInstance()->applyFilters(
                 'Pages:RESTFields',
                 $restFieldsQuery
             );
