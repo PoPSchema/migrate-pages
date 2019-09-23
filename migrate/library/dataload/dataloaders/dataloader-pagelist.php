@@ -37,12 +37,12 @@ class Dataloader_PageList extends Dataloader_PageBase
         return 'DESC';
     }
     
-    public function executeQueryIds($query)
+    public function executeQueryIds($query): array
     {
         $options = [
             'return-type' => POP_RETURNTYPE_IDS,
         ];
-        return $this->executeQuery($query, $options);
+        return (array)$this->executeQuery($query, $options);
     }
 
     protected function getLimitParam($query_args)

@@ -18,7 +18,7 @@ abstract class Dataloader_PageBase extends \PoP\ComponentModel\QueryDataDataload
         return FieldValueResolver_Pages::class;
     }
     
-    public function executeGetData(array $ids)
+    public function executeGetData(array $ids): array
     {
         if ($ids) {
             $cmspagesapi = \PoP\Pages\FunctionAPIFactory::getInstance();
