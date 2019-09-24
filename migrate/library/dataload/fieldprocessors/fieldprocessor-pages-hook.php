@@ -2,11 +2,11 @@
 namespace PoP\Pages;
 use PoP\Translation\Facades\TranslationAPIFacade;
 
-class FieldValueResolver_Pages_Unit extends \PoP\ComponentModel\AbstractDBDataFieldValueResolverUnit
+class FieldResolver_Pages_Unit extends \PoP\ComponentModel\AbstractDBDataFieldValueResolver
 {
     public static function getClassesToAttachTo(): array
     {
-        return array(\PoP\Pages\FieldValueResolver_Pages::class);
+        return array(\PoP\Pages\FieldResolver_Pages::class);
     }
 
     public function getFieldNamesToResolve(): array
@@ -39,24 +39,24 @@ class FieldValueResolver_Pages_Unit extends \PoP\ComponentModel\AbstractDBDataFi
         return $descriptions[$fieldName];
     }
 
-    public function getValue($fieldValueResolver, $resultitem, string $fieldName, array $fieldArgs = [])
+    public function getValue($fieldResolver, $resultitem, string $fieldName, array $fieldArgs = [])
     {
         $cmspagesapi = \PoP\Pages\FunctionAPIFactory::getInstance();
         $page = $resultitem;
         switch ($fieldName) {
             case 'title':
-                return $cmspagesapi->getTitle($fieldValueResolver->getId($page));
+                return $cmspagesapi->getTitle($fieldResolver->getId($page));
 
             case 'content':
-                return $cmspagesapi->getContent($fieldValueResolver->getId($page));
+                return $cmspagesapi->getContent($fieldResolver->getId($page));
 
             case 'url':
-                return $cmspagesapi->getPageURL($fieldValueResolver->getId($page));
+                return $cmspagesapi->getPageURL($fieldResolver->getId($page));
         }
 
-        return parent::getValue($fieldValueResolver, $resultitem, $fieldName, $fieldArgs);
+        return parent::getValue($fieldResolver, $resultitem, $fieldName, $fieldArgs);
     }
 }
 
 // Static Initialization: Attach
-FieldValueResolver_Pages_Unit::attach(POP_ATTACHABLEEXTENSIONGROUP_FIELDVALUERESOLVERUNITS);
+FieldResolver_Pages_Unit::attach(POP_ATTACHABLEEXTENSIONGROUP_FIELDVALUERESOLVERUNITS);

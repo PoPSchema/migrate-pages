@@ -13,9 +13,9 @@ abstract class Dataloader_PageBase extends \PoP\ComponentModel\QueryDataDataload
         return GD_DATABASE_KEY_PAGES;
     }
 
-    public function getFieldValueResolverClass(): string
+    public function getFieldResolverClass(): string
     {
-        return FieldValueResolver_Pages::class;
+        return FieldResolver_Pages::class;
     }
     
     public function executeGetData(array $ids): array

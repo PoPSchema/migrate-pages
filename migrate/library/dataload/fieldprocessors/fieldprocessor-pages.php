@@ -2,7 +2,7 @@
 namespace PoP\Pages;
 use PoP\ComponentModel\Utils;
 
-class FieldValueResolver_Pages extends \PoP\ComponentModel\FieldValueResolverBase
+class FieldResolver_Pages extends \PoP\ComponentModel\FieldResolverBase
 {
     public function getId($resultitem)
     {
