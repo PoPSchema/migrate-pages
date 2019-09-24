@@ -2,7 +2,7 @@
 namespace PoP\Pages;
 use PoP\Translation\Facades\TranslationAPIFacade;
 
-class FieldResolver_Pages_Unit extends \PoP\ComponentModel\AbstractDBDataFieldValueResolver
+class FieldValueResolver_Pages extends \PoP\ComponentModel\AbstractDBDataFieldValueResolver
 {
     public static function getClassesToAttachTo(): array
     {
@@ -59,4 +59,4 @@ class FieldResolver_Pages_Unit extends \PoP\ComponentModel\AbstractDBDataFieldVa
 }
 
 // Static Initialization: Attach
-FieldResolver_Pages_Unit::attach(POP_ATTACHABLEEXTENSIONGROUP_FIELDVALUERESOLVERUNITS);
+FieldValueResolver_Pages::attach(POP_ATTACHABLEEXTENSIONGROUP_FIELDVALUERESOLVERUNITS);
