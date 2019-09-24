@@ -4,10 +4,10 @@ use PoP\ComponentModel\Utils;
 
 class FieldResolver_Pages extends \PoP\ComponentModel\FieldResolverBase
 {
-    public function getId($resultitem)
+    public function getId($resultItem)
     {
         $cmspagesresolver = \PoP\Pages\ObjectPropertyResolverFactory::getInstance();
-        $page = $resultitem;
+        $page = $resultItem;
         return $cmspagesresolver->getPageId($page);
     }
 
