@@ -39,7 +39,7 @@ class FieldValueResolver_Pages extends \PoP\ComponentModel\AbstractDBDataFieldVa
         return $descriptions[$fieldName];
     }
 
-    public function getValue($fieldResolver, $resultItem, string $fieldName, array $fieldArgs = [])
+    public function resolveValue($fieldResolver, $resultItem, string $fieldName, array $fieldArgs = [])
     {
         $cmspagesapi = \PoP\Pages\FunctionAPIFactory::getInstance();
         $page = $resultItem;
@@ -54,7 +54,7 @@ class FieldValueResolver_Pages extends \PoP\ComponentModel\AbstractDBDataFieldVa
                 return $cmspagesapi->getPageURL($fieldResolver->getId($page));
         }
 
-        return parent::getValue($fieldResolver, $resultItem, $fieldName, $fieldArgs);
+        return parent::resolveValue($fieldResolver, $resultItem, $fieldName, $fieldArgs);
     }
 }
 
