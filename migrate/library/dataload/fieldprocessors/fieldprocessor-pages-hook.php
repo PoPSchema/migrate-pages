@@ -1,6 +1,7 @@
 <?php
 namespace PoP\Pages;
 use PoP\Translation\Facades\TranslationAPIFacade;
+use PoP\ComponentModel\SchemaDefinition;
 
 class FieldValueResolver_Pages extends \PoP\ComponentModel\AbstractDBDataFieldValueResolver
 {
@@ -21,9 +22,9 @@ class FieldValueResolver_Pages extends \PoP\ComponentModel\AbstractDBDataFieldVa
     public function getFieldDocumentationType(string $fieldName): ?string
     {
         $types = [
-			'title' => TYPE_STRING,
-            'content' => TYPE_STRING,
-            'url' => TYPE_URL,
+			'title' => SchemaDefinition::TYPE_STRING,
+            'content' => SchemaDefinition::TYPE_STRING,
+            'url' => SchemaDefinition::TYPE_URL,
         ];
         return $types[$fieldName];
     }
