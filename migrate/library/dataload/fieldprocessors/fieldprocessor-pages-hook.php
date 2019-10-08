@@ -1,7 +1,7 @@
 <?php
 namespace PoP\Pages;
 use PoP\Translation\Facades\TranslationAPIFacade;
-use PoP\ComponentModel\SchemaDefinition;
+use PoP\ComponentModel\Schema\SchemaDefinition;
 
 class FieldValueResolver_Pages extends \PoP\ComponentModel\AbstractDBDataFieldValueResolver
 {
