@@ -1,6 +1,6 @@
 <?php
 use PoP\Hooks\Facades\HooksAPIFacade;
-use PoP\ComponentModel\Facades\Schema\FieldQueryInterpreterFacade;
+use PoP\API\Facades\Schema\FieldQueryConvertorFacade;
 
 class PoP_Pages_Module_EntryRouteModuleProcessor extends \PoP\ModuleRouting\AbstractEntryRouteModuleProcessor
 {
@@ -11,7 +11,7 @@ class PoP_Pages_Module_EntryRouteModuleProcessor extends \PoP\ModuleRouting\Abst
         if (is_null(self::$restFields)) {
             self::$restFields = self::getRESTFieldsQuery();
             if (is_string(self::$restFields)) {
-                self::$restFields = FieldQueryInterpreterFacade::getInstance()->convertAPIQueryFromStringToArray(self::$restFields);
+                self::$restFields = FieldQueryConvertorFacade::getInstance()->convertAPIQuery(self::$restFields);
             }
         }
         return self::$restFields;
