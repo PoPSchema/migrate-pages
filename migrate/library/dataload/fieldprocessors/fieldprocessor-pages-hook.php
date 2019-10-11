@@ -3,6 +3,7 @@ namespace PoP\Pages;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\FieldValueResolvers\AbstractDBDataFieldValueResolver;
+use PoP\ComponentModel\FieldResolvers\FieldResolverInterface;
 
 class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
 {
@@ -20,7 +21,7 @@ class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
         ];
     }
 
-    public function getFieldDocumentationType($fieldResolver, string $fieldName): ?string
+    public function getFieldDocumentationType(FieldResolverInterface $fieldResolver, string $fieldName): ?string
     {
         $types = [
 			'title' => SchemaDefinition::TYPE_STRING,
@@ -30,7 +31,7 @@ class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
         return $types[$fieldName] ?? parent::getFieldDocumentationType($fieldResolver, $fieldName);
     }
 
-    public function getFieldDocumentationDescription($fieldResolver, string $fieldName): ?string
+    public function getFieldDocumentationDescription(FieldResolverInterface $fieldResolver, string $fieldName): ?string
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
@@ -41,7 +42,7 @@ class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
         return $descriptions[$fieldName] ?? parent::getFieldDocumentationDescription($fieldResolver, $fieldName);
     }
 
-    public function resolveValue($fieldResolver, $resultItem, string $fieldName, array $fieldArgs = [])
+    public function resolveValue(FieldResolverInterface $fieldResolver, $resultItem, string $fieldName, array $fieldArgs = [])
     {
         $cmspagesapi = \PoP\Pages\FunctionAPIFactory::getInstance();
         $page = $resultItem;
