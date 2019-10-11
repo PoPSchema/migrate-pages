@@ -12,7 +12,7 @@ class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
         return array(\PoP\Pages\FieldResolver_Pages::class);
     }
 
-    public function getFieldNamesToResolve(): array
+    public static function getFieldNamesToResolve(): array
     {
         return [
 			'title',
