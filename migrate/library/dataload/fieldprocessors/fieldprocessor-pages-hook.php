@@ -20,17 +20,17 @@ class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
         ];
     }
 
-    public function getFieldDocumentationType(string $fieldName): ?string
+    public function getFieldDocumentationType($fieldResolver, string $fieldName): ?string
     {
         $types = [
 			'title' => SchemaDefinition::TYPE_STRING,
             'content' => SchemaDefinition::TYPE_STRING,
             'url' => SchemaDefinition::TYPE_URL,
         ];
-        return $types[$fieldName];
+        return $types[$fieldName] ?? parent::getFieldDocumentationType($fieldResolver, $fieldName);
     }
 
-    public function getFieldDocumentationDescription(string $fieldName): ?string
+    public function getFieldDocumentationDescription($fieldResolver, string $fieldName): ?string
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
@@ -38,7 +38,7 @@ class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
             'content' => $translationAPI->__('Page\'s content', 'pop-pages'),
             'url' => $translationAPI->__('Page\'s URL', 'pop-pages'),
         ];
-        return $descriptions[$fieldName];
+        return $descriptions[$fieldName] ?? parent::getFieldDocumentationDescription($fieldResolver, $fieldName);
     }
 
     public function resolveValue($fieldResolver, $resultItem, string $fieldName, array $fieldArgs = [])
