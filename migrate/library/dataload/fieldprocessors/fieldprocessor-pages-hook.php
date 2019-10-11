@@ -2,8 +2,9 @@
 namespace PoP\Pages;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
+use PoP\ComponentModel\FieldValueResolvers\AbstractDBDataFieldValueResolver;
 
-class FieldValueResolver_Pages extends \PoP\ComponentModel\AbstractDBDataFieldValueResolver
+class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
 {
     public static function getClassesToAttachTo(): array
     {
