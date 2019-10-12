@@ -1,5 +1,5 @@
 <?php
-use PoP\ComponentModel\ModuleProcessors\AbstractRelationalFieldDataloadModuleProcessor;
+use PoP\API\ModuleProcessors\AbstractRelationalFieldDataloadModuleProcessor;
 
 class PoP_Pages_Module_Processor_FieldDataloads extends AbstractRelationalFieldDataloadModuleProcessor
 {
