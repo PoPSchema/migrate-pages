@@ -45,7 +45,7 @@ class PoP_Pages_Module_EntryRouteModuleProcessor extends \PoP\ModuleRouting\Abst
             ];
             // REST API Page
             $ret[POP_NATURE_PAGE][] = [
-                'module' => [PoP_Pages_Module_Processor_FieldDataloads::class, PoP_Pages_Module_Processor_FieldDataloads::MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS, ['fields' => isset($vars['fields']) ? $vars['fields'] : self::getRESTFields()]],
+                'module' => [PoP_Pages_Module_Processor_FieldDataloads::class, PoP_Pages_Module_Processor_FieldDataloads::MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS, ['fields' => isset($vars['query']) ? $vars['query'] : self::getRESTFields()]],
                 'conditions' => [
                     'scheme' => POP_SCHEME_API,
                     'datastructure' => GD_DATALOAD_DATASTRUCTURE_REST,
