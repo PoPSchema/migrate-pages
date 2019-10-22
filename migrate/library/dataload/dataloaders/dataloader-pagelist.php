@@ -1,6 +1,7 @@
 <?php
 namespace PoP\Pages;
 use PoP\Hooks\Facades\HooksAPIFacade;
+use PoP\LooseContracts\Facades\Contracts\NameResolverFacade;
 
 class Dataloader_PageList extends Dataloader_PageBase
 {
@@ -29,7 +30,7 @@ class Dataloader_PageList extends Dataloader_PageBase
 
     protected function getOrderbyDefault()
     {
-        return \PoP\LooseContracts\NameResolverFactory::getInstance()->getName('popcms:dbcolumn:orderby:pages:date');
+        return NameResolverFacade::getInstance()->getName('popcms:dbcolumn:orderby:pages:date');
     }
 
     protected function getOrderDefault()
