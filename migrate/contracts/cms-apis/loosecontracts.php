@@ -1,7 +1,8 @@
 <?php
 namespace PoP\Pages;
+use PoP\LooseContracts\Contracts\AbstractLooseContractSet;
 
-class CMSLooseContracts extends \PoP\LooseContracts\AbstractCMSLooseContracts
+class CMSLooseContracts extends AbstractLooseContractSet
 {
 	public function getRequiredHooks() {
 		return [
