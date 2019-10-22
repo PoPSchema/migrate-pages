@@ -8,7 +8,6 @@ class CMSLooseContracts extends AbstractLooseContractSet
 		return [
 			// Filters
 			'popcms:page:title',
-			'popcms:page:content',
 		];
 	}
 
