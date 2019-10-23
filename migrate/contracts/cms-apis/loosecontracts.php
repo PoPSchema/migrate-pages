@@ -1,6 +1,6 @@
 <?php
 namespace PoP\Pages;
-use PoP\LooseContracts\Contracts\AbstractLooseContractSet;
+use PoP\LooseContracts\AbstractLooseContractSet;
 
 class CMSLooseContracts extends AbstractLooseContractSet
 {
@@ -22,5 +22,5 @@ class CMSLooseContracts extends AbstractLooseContractSet
 /**
  * Initialize
  */
-new CMSLooseContracts(\PoP\LooseContracts\Facades\Contracts\LooseContractManagerFacade::getInstance());
+new CMSLooseContracts(\PoP\LooseContracts\Facades\LooseContractManagerFacade::getInstance());
 

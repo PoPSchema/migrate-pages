@@ -1,7 +1,7 @@
 <?php
 namespace PoP\Pages;
 use PoP\Hooks\Facades\HooksAPIFacade;
-use PoP\LooseContracts\Facades\Contracts\NameResolverFacade;
+use PoP\LooseContracts\Facades\NameResolverFacade;
 
 class Dataloader_PageList extends Dataloader_PageBase
 {
