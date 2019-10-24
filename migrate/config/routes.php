@@ -1,6 +1,6 @@
 <?php
 use PoP\Hooks\Facades\HooksAPIFacade;
-use PoP\Routing\Routes\DefinitionGroups;
+use PoP\Routing\DefinitionGroups;
 use PoP\Definitions\Facades\DefinitionManagerFacade;
 $definitionManager = DefinitionManagerFacade::getInstance();
 
