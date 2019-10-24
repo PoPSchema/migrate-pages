@@ -1,6 +1,6 @@
 <?php
 use PoP\Hooks\Facades\HooksAPIFacade;
-use PoP\API\Facades\Schema\FieldQueryConvertorFacade;
+use PoP\API\Facades\FieldQueryConvertorFacade;
 
 class PoP_Pages_Module_EntryRouteModuleProcessor extends \PoP\ModuleRouting\AbstractEntryRouteModuleProcessor
 {
