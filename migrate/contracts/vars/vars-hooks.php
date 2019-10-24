@@ -1,14 +1,15 @@
 <?php
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\Hooks\Facades\HooksAPIFacade;
+use PoP\Pages\Routing\RouteNatures;
 
 HooksAPIFacade::getInstance()->addFilter(
-    \PoP\ComponentModel\ModelInstance\ModelInstance::HOOK_COMPONENTS_RESULT, 
+    \PoP\ComponentModel\ModelInstance\ModelInstance::HOOK_COMPONENTS_RESULT,
     function ($components) {
 
         $vars = \PoP\ComponentModel\Engine_Vars::getVars();
         switch ($vars['nature']) {
-            case POP_NATURE_PAGE:
+            case RouteNatures::PAGE:
                 $component_types = HooksAPIFacade::getInstance()->applyFilters(
                     '\PoP\Pages\ModelInstanceProcessor_Utils:components_from_vars:type:page',
                     []

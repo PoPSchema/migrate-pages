@@ -1,6 +1,7 @@
 <?php
 use PoP\Hooks\Facades\HooksAPIFacade;
 use PoP\API\Facades\FieldQueryConvertorFacade;
+use PoP\Pages\Routing\RouteNatures;
 
 class PoP_Pages_Module_EntryRouteModuleProcessor extends \PoP\ModuleRouting\AbstractEntryRouteModuleProcessor
 {
@@ -37,14 +38,14 @@ class PoP_Pages_Module_EntryRouteModuleProcessor extends \PoP\ModuleRouting\Abst
             $vars = \PoP\ComponentModel\Engine_Vars::getVars();
 
             // Page
-            $ret[POP_NATURE_PAGE][] = [
+            $ret[RouteNatures::PAGE][] = [
                 'module' => [PoP_Pages_Module_Processor_FieldDataloads::class, PoP_Pages_Module_Processor_FieldDataloads::MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS],
                 'conditions' => [
                     'scheme' => POP_SCHEME_API,
                 ],
             ];
             // REST API Page
-            $ret[POP_NATURE_PAGE][] = [
+            $ret[RouteNatures::PAGE][] = [
                 'module' => [PoP_Pages_Module_Processor_FieldDataloads::class, PoP_Pages_Module_Processor_FieldDataloads::MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS, ['fields' => isset($vars['query']) ? $vars['query'] : self::getRESTFields()]],
                 'conditions' => [
                     'scheme' => POP_SCHEME_API,

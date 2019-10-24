@@ -1,6 +1,7 @@
 <?php
 namespace PoP\Pages\WP;
 use PoP\Hooks\Facades\HooksAPIFacade;
+use PoP\Pages\Routing\RouteNatures;
 
 class Engine_Hooks
 {
@@ -19,7 +20,7 @@ class Engine_Hooks
         // Set additional properties based on the nature: the global $post, $author, or $queried_object
         $vars = &$vars_in_array[0];
         $nature = $vars['nature'];
-        $vars['routing-state']['is-page'] = $nature == POP_NATURE_PAGE;
+        $vars['routing-state']['is-page'] = $nature == RouteNatures::PAGE;
     }
 }
 
