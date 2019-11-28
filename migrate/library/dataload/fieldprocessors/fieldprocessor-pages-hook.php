@@ -42,7 +42,7 @@ class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($fieldResolver, $fieldName);
     }
 
-    public function resolveValue(FieldResolverInterface $fieldResolver, $resultItem, string $fieldName, array $fieldArgs = [])
+    public function resolveValue(FieldResolverInterface $fieldResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
     {
         $cmspagesapi = \PoP\Pages\FunctionAPIFactory::getInstance();
         $page = $resultItem;
@@ -57,7 +57,7 @@ class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
                 return $cmspagesapi->getPageURL($fieldResolver->getId($page));
         }
 
-        return parent::resolveValue($fieldResolver, $resultItem, $fieldName, $fieldArgs);
+        return parent::resolveValue($fieldResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);
     }
 }
 
