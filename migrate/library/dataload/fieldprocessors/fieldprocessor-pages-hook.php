@@ -2,10 +2,10 @@
 namespace PoP\Pages;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
-use PoP\ComponentModel\FieldValueResolvers\AbstractDBDataFieldValueResolver;
+use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 
-class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
+class FieldResolver_Pages extends AbstractDBDataFieldResolver
 {
     public static function getClassesToAttachTo(): array
     {
@@ -62,4 +62,4 @@ class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
 }
 
 // Static Initialization: Attach
-FieldValueResolver_Pages::attach(\PoP\ComponentModel\AttachableExtensions\AttachableExtensionGroups::FIELDVALUERESOLVERS);
+FieldResolver_Pages::attach(\PoP\ComponentModel\AttachableExtensions\AttachableExtensionGroups::FIELDRESOLVERS);
