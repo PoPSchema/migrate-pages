@@ -18,16 +18,12 @@ abstract class Dataloader_PageBase extends \PoP\ComponentModel\QueryDataDataload
         return TypeResolver_Pages::class;
     }
     
-    public function executeGetData(array $ids): array
+    protected function executeGetData(array $ids): array
     {
-        if ($ids) {
-            $cmspagesapi = \PoP\Pages\FunctionAPIFactory::getInstance();
-            $query = array(
-                'include' => $ids,
-            );
-            return $cmspagesapi->getPages($query);
-        }
-        
-        return array();
+        $cmspagesapi = \PoP\Pages\FunctionAPIFactory::getInstance();
+        $query = array(
+            'include' => $ids,
+        );
+        return $cmspagesapi->getPages($query);
     }
 }
