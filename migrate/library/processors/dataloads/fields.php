@@ -1,10 +1,10 @@
 <?php
 use PoP\API\ModuleProcessors\AbstractRelationalFieldDataloadModuleProcessor;
-use PoP\QueriedObject\ModuleProcessors\SingleDBObjectModuleProcessorTrait;
+use PoP\QueriedObject\ModuleProcessors\QueriedDBObjectModuleProcessorTrait;
 
 class PoP_Pages_Module_Processor_FieldDataloads extends AbstractRelationalFieldDataloadModuleProcessor
 {
-    use SingleDBObjectModuleProcessorTrait;
+    use QueriedDBObjectModuleProcessorTrait;
 
     public const MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS = 'dataload-dataquery-page-fields';
 
