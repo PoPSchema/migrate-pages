@@ -3,13 +3,13 @@ namespace PoP\Pages;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\FieldValueResolvers\AbstractDBDataFieldValueResolver;
-use PoP\ComponentModel\FieldResolvers\FieldResolverInterface;
+use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 
 class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
 {
     public static function getClassesToAttachTo(): array
     {
-        return array(\PoP\Pages\FieldResolver_Pages::class);
+        return array(\PoP\Pages\TypeResolver_Pages::class);
     }
 
     public static function getFieldNamesToResolve(): array
@@ -21,17 +21,17 @@ class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
         ];
     }
 
-    public function getSchemaFieldType(FieldResolverInterface $fieldResolver, string $fieldName): ?string
+    public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         $types = [
 			'title' => SchemaDefinition::TYPE_STRING,
             'content' => SchemaDefinition::TYPE_STRING,
             'url' => SchemaDefinition::TYPE_URL,
         ];
-        return $types[$fieldName] ?? parent::getSchemaFieldType($fieldResolver, $fieldName);
+        return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
     }
 
-    public function getSchemaFieldDescription(FieldResolverInterface $fieldResolver, string $fieldName): ?string
+    public function getSchemaFieldDescription(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
@@ -39,25 +39,25 @@ class FieldValueResolver_Pages extends AbstractDBDataFieldValueResolver
             'content' => $translationAPI->__('Page\'s content', 'pop-pages'),
             'url' => $translationAPI->__('Page\'s URL', 'pop-pages'),
         ];
-        return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($fieldResolver, $fieldName);
+        return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
 
-    public function resolveValue(FieldResolverInterface $fieldResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
+    public function resolveValue(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
     {
         $cmspagesapi = \PoP\Pages\FunctionAPIFactory::getInstance();
         $page = $resultItem;
         switch ($fieldName) {
             case 'title':
-                return $cmspagesapi->getTitle($fieldResolver->getId($page));
+                return $cmspagesapi->getTitle($typeResolver->getId($page));
 
             case 'content':
-                return $cmspagesapi->getContent($fieldResolver->getId($page));
+                return $cmspagesapi->getContent($typeResolver->getId($page));
 
             case 'url':
-                return $cmspagesapi->getPageURL($fieldResolver->getId($page));
+                return $cmspagesapi->getPageURL($typeResolver->getId($page));
         }
 
-        return parent::resolveValue($fieldResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);
+        return parent::resolveValue($typeResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);
     }
 }
 

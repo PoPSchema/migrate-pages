@@ -1,9 +1,9 @@
 <?php
 namespace PoP\Pages;
 use PoP\ComponentModel\Utils;
-use PoP\ComponentModel\FieldResolvers\AbstractFieldResolver;
+use PoP\ComponentModel\TypeResolvers\AbstractTypeResolver;
 
-class FieldResolver_Pages extends AbstractFieldResolver
+class TypeResolver_Pages extends AbstractTypeResolver
 {
     public function getId($resultItem)
     {
