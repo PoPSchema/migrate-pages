@@ -5,7 +5,7 @@ use PoP\QueriedObject\ModuleProcessors\SingleDBObjectModuleProcessorTrait;
 class PoP_Pages_Module_Processor_FieldDataloads extends AbstractRelationalFieldDataloadModuleProcessor
 {
     use SingleDBObjectModuleProcessorTrait;
-    
+
     public const MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS = 'dataload-dataquery-page-fields';
 
     public function getModulesToProcess(): array
@@ -13,6 +13,16 @@ class PoP_Pages_Module_Processor_FieldDataloads extends AbstractRelationalFieldD
         return array(
             [self::class, self::MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS],
         );
+    }
+
+    public function getDBObjectIDOrIDs(array $module, array &$props, &$data_properties)
+    {
+        switch ($module[1]) {
+            case self::MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS:
+                return $this->getSingleDBObjectID($module, $props, $data_properties);
+        }
+        
+        return parent::getDBObjectIDOrIDs($module, $props, $data_properties);
     }
 
     public function getDataloaderClass(array $module): ?string
