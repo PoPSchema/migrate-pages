@@ -19,7 +19,7 @@ class PoP_Pages_Module_Processor_FieldDataloads extends AbstractRelationalFieldD
     {
         switch ($module[1]) {
             case self::MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS:
-                return $this->getSingleDBObjectID($module, $props, $data_properties);
+                return $this->getQueriedDBObjectID($module, $props, $data_properties);
         }
         
         return parent::getDBObjectIDOrIDs($module, $props, $data_properties);
