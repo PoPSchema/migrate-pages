@@ -25,14 +25,14 @@ class PoP_Pages_Module_Processor_FieldDataloads extends AbstractRelationalFieldD
         return parent::getDBObjectIDOrIDs($module, $props, $data_properties);
     }
 
-    public function getDataloaderClass(array $module): ?string
+    public function getTypeDataResolverClass(array $module): ?string
     {
         switch ($module[1]) {
             case self::MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS:
                 return \PoP\Pages\Dataloader_PageList::class;
         }
 
-        return parent::getDataloaderClass($module);
+        return parent::getTypeDataResolverClass($module);
     }
 }
 
