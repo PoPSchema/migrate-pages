@@ -2,14 +2,34 @@
 namespace PoP\Pages;
 use PoP\Hooks\Facades\HooksAPIFacade;
 use PoP\LooseContracts\Facades\NameResolverFacade;
+use PoP\ComponentModel\TypeDataResolvers\AbstractTypeQueryableDataResolver;
 
-class Dataloader_PageList extends Dataloader_PageBase
+class Dataloader_PageList extends AbstractTypeQueryableDataResolver
 {
-    use \PoP\ComponentModel\Dataloader_ListTrait;
+    public function getDataquery()
+    {
+        return GD_DATAQUERY_PAGE;
+    }
+    
+    public function getDatabaseKey()
+    {
+        return GD_DATABASE_KEY_PAGES;
+    }
 
-    /**
-     * Function to override
-     */
+    public function getTypeResolverClass(): string
+    {
+        return TypeResolver_Pages::class;
+    }
+    
+    public function resolveObjectsFromIDs(array $ids): array
+    {
+        $cmspagesapi = \PoP\Pages\FunctionAPIFactory::getInstance();
+        $query = array(
+            'include' => $ids,
+        );
+        return $cmspagesapi->getPages($query);
+    }
+
     public function getDataFromIdsQuery(array $ids): array
     {
         $query = array();
@@ -44,14 +64,6 @@ class Dataloader_PageList extends Dataloader_PageBase
             'return-type' => POP_RETURNTYPE_IDS,
         ];
         return (array)$this->executeQuery($query, $options);
-    }
-
-    protected function getLimitParam($query_args)
-    {
-        return HooksAPIFacade::getInstance()->applyFilters(
-            'Dataloader_PageList:query:limit',
-            $this->getMetaLimitParam($query_args)
-        );
     }
 
     protected function getQueryHookName() 
