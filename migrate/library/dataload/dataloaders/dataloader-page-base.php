@@ -18,7 +18,7 @@ abstract class Dataloader_PageBase extends \PoP\ComponentModel\FilterableDataDat
         return TypeResolver_Pages::class;
     }
     
-    protected function executeGetData(array $ids): array
+    public function resolveObjectsFromIDs(array $ids): array
     {
         $cmspagesapi = \PoP\Pages\FunctionAPIFactory::getInstance();
         $query = array(
