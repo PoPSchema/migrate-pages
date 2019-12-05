@@ -1,7 +1,8 @@
 <?php
 namespace PoP\Pages;
+use PoP\ComponentModel\TypeDataResolvers\AbstractTypeQueryableDataResolver;
 
-abstract class Dataloader_PageBase extends \PoP\ComponentModel\Dataloader
+abstract class Dataloader_PageBase extends AbstractTypeQueryableDataResolver
 {
     public function getDataquery()
     {
