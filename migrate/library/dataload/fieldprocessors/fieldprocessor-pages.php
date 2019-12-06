@@ -5,6 +5,13 @@ use PoP\ComponentModel\TypeResolvers\AbstractTypeResolver;
 
 class TypeResolver_Pages extends AbstractTypeResolver
 {
+    public const DATABASE_KEY = 'pages';
+
+    public function getDatabaseKey()
+    {
+        return self::DATABASE_KEY;
+    }
+
     public function getId($resultItem)
     {
         $cmspagesresolver = \PoP\Pages\ObjectPropertyResolverFactory::getInstance();

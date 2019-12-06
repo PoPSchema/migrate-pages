@@ -11,11 +11,6 @@ class Dataloader_PageList extends AbstractTypeQueryableDataResolver
         return GD_DATAQUERY_PAGE;
     }
     
-    public function getDatabaseKey()
-    {
-        return GD_DATABASE_KEY_PAGES;
-    }
-
     public function getTypeResolverClass(): string
     {
         return TypeResolver_Pages::class;
