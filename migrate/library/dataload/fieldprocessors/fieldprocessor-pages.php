@@ -7,7 +7,7 @@ class TypeResolver_Pages extends AbstractTypeResolver
 {
     public const DATABASE_KEY = 'pages';
 
-    public function getDatabaseKey()
+    public function getDatabaseKey(): string
     {
         return self::DATABASE_KEY;
     }
