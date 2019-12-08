@@ -19,7 +19,7 @@ class TypeResolver_Pages extends AbstractTypeResolver
         return $cmspagesresolver->getPageId($page);
     }
 
-    public function getIdFieldTypeDataResolverClass()
+    public function getIdFieldTypeDataResolverClass(): string
     {
         return \PoP\Pages\Dataloader_PageList::class;
     }
