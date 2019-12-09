@@ -1,6 +1,7 @@
 <?php
 use PoP\API\ModuleProcessors\AbstractRelationalFieldDataloadModuleProcessor;
 use PoP\QueriedObject\ModuleProcessors\QueriedDBObjectModuleProcessorTrait;
+use PoP\Pages\TypeDataResolvers\PageTypeDataResolver;
 
 class PoP_Pages_Module_Processor_FieldDataloads extends AbstractRelationalFieldDataloadModuleProcessor
 {
@@ -29,7 +30,7 @@ class PoP_Pages_Module_Processor_FieldDataloads extends AbstractRelationalFieldD
     {
         switch ($module[1]) {
             case self::MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS:
-                return \PoP\Pages\Dataloader_PageList::class;
+                return PageTypeDataResolver::class;
         }
 
         return parent::getTypeDataResolverClass($module);
