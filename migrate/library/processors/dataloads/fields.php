@@ -7,19 +7,19 @@ class PoP_Pages_Module_Processor_FieldDataloads extends AbstractRelationalFieldD
 {
     use QueriedDBObjectModuleProcessorTrait;
 
-    public const MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS = 'dataload-dataquery-page-fields';
+    public const MODULE_DATALOAD_RELATIONALFIELDS_PAGE = 'dataload-relationalfields-page';
 
     public function getModulesToProcess(): array
     {
         return array(
-            [self::class, self::MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS],
+            [self::class, self::MODULE_DATALOAD_RELATIONALFIELDS_PAGE],
         );
     }
 
     public function getDBObjectIDOrIDs(array $module, array &$props, &$data_properties)
     {
         switch ($module[1]) {
-            case self::MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS:
+            case self::MODULE_DATALOAD_RELATIONALFIELDS_PAGE:
                 return $this->getQueriedDBObjectID($module, $props, $data_properties);
         }
         
@@ -29,7 +29,7 @@ class PoP_Pages_Module_Processor_FieldDataloads extends AbstractRelationalFieldD
     public function getTypeResolverClass(array $module): ?string
     {
         switch ($module[1]) {
-            case self::MODULE_DATALOAD_DATAQUERY_PAGE_FIELDS:
+            case self::MODULE_DATALOAD_RELATIONALFIELDS_PAGE:
                 return PageTypeResolver::class;
         }
 
