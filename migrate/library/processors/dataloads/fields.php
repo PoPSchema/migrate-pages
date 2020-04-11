@@ -1,5 +1,5 @@
 <?php
-use PoP\Engine\ModuleProcessors\AbstractRelationalFieldDataloadModuleProcessor;
+use PoP\API\ModuleProcessors\AbstractRelationalFieldDataloadModuleProcessor;
 use PoP\QueriedObject\ModuleProcessors\QueriedDBObjectModuleProcessorTrait;
 use PoP\Pages\TypeResolvers\PageTypeResolver;
 
