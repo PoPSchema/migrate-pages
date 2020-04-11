@@ -1,5 +1,5 @@
 <?php
-use PoP\API\ModuleProcessors\AbstractRelationalFieldDataloadModuleProcessor;
+use PoP\Engine\ModuleProcessors\AbstractRelationalFieldDataloadModuleProcessor;
 use PoP\QueriedObject\ModuleProcessors\QueriedDBObjectModuleProcessorTrait;
 use PoP\Pages\TypeResolvers\PageTypeResolver;
 
@@ -22,7 +22,7 @@ class PoP_Pages_Module_Processor_FieldDataloads extends AbstractRelationalFieldD
             case self::MODULE_DATALOAD_RELATIONALFIELDS_PAGE:
                 return $this->getQueriedDBObjectID($module, $props, $data_properties);
         }
-        
+
         return parent::getDBObjectIDOrIDs($module, $props, $data_properties);
     }
 
