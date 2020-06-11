@@ -5,8 +5,8 @@ interface FunctionAPI
 {
     public function getHomeStaticPage();
     public function getPageURL($page_id);
-	public function getPage($page_id);
-	public function getContent($page_id);
-	public function getTitle($page_id);
-	public function getPages($query, array $options = []);
+    public function getPage($page_id);
+    public function getContent($page_id): string;
+    public function getTitle($page_id);
+    public function getPages($query, array $options = []): array;
 }
