@@ -1,5 +1,5 @@
 <?php
-namespace PoP\Pages;
+namespace PoPSchema\Pages;
 use PoP\LooseContracts\AbstractLooseContractSet;
 
 class CMSLooseContracts extends AbstractLooseContractSet

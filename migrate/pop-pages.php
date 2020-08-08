@@ -6,7 +6,7 @@ Description: The foundation for a PoP Pages
 Plugin URI: https://getpop.org/
 Author: Leonardo Losoviz
 */
-namespace PoP\Pages;
+namespace PoPSchema\Pages;
 use PoP\Hooks\Facades\HooksAPIFacade;
 
 //-------------------------------------------------------------------------------------

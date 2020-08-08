@@ -1,5 +1,5 @@
 <?php
-namespace PoP\Pages;
+namespace PoPSchema\Pages;
 
 abstract class ObjectPropertyResolver_Base implements ObjectPropertyResolver
 {

@@ -1,5 +1,5 @@
 <?php
-namespace PoP\Pages;
+namespace PoPSchema\Pages;
 
 class Initialization
 {

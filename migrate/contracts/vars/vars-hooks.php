@@ -1,7 +1,7 @@
 <?php
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\Hooks\Facades\HooksAPIFacade;
-use PoP\Pages\Routing\RouteNatures;
+use PoPSchema\Pages\Routing\RouteNatures;
 use PoP\ComponentModel\State\ApplicationState;
 
 HooksAPIFacade::getInstance()->addFilter(
@@ -12,7 +12,7 @@ HooksAPIFacade::getInstance()->addFilter(
         switch ($vars['nature']) {
             case RouteNatures::PAGE:
                 $component_types = HooksAPIFacade::getInstance()->applyFilters(
-                    '\PoP\Pages\ModelInstanceProcessor_Utils:components_from_vars:type:page',
+                    '\PoPSchema\Pages\ModelInstanceProcessor_Utils:components_from_vars:type:page',
                     []
                 );
                 if (in_array(POP_MODELINSTANCECOMPONENTTYPE_PAGE_PAGEID, $component_types)) {

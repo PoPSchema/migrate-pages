@@ -1,7 +1,7 @@
 <?php
-namespace PoP\Pages\WP;
+namespace PoPSchema\Pages\WP;
 use PoP\Hooks\Facades\HooksAPIFacade;
-use PoP\Pages\Routing\RouteNatures;
+use PoPSchema\Pages\Routing\RouteNatures;
 
 class Engine_Hooks
 {

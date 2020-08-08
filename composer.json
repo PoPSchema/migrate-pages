@@ -1,7 +1,7 @@
 {
-    "name": "getpop/migrate-pages",
+    "name": "pop-schema/migrate-pages",
     "type": "library",
-    "description": "(Temporary package) Migrate code to package https://github.com/getpop/pages. Target package description: Adds support for pages",
+    "description": "(Temporary package) Migrate code to package https://github.com/pop-schema/pages. Target package description: Adds support for pages",
     "keywords": [
         "PoP",
         "pages"
