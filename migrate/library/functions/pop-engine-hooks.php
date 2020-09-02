@@ -8,14 +8,17 @@ class Engine_Hooks
     public function __construct()
     {
         HooksAPIFacade::getInstance()->addAction(
-            'augmentVarsProperties', 
-            [$this, 'augmentVarsProperties'], 
+            'augmentVarsProperties',
+            [$this, 'augmentVarsProperties'],
             10,
             1
         );
     }
 
-    public function augmentVarsProperties($vars_in_array)
+    /**
+     * @param array<array> $vars_in_array
+     */
+    public function augmentVarsProperties(array $vars_in_array): void
     {
         // Set additional properties based on the nature: the global $post, $author, or $queried_object
         $vars = &$vars_in_array[0];
