@@ -4,14 +4,20 @@ use PoP\LooseContracts\AbstractLooseContractSet;
 
 class CMSLooseContracts extends AbstractLooseContractSet
 {
-	public function getRequiredHooks() {
+	/**
+     * @return string[]
+     */
+    public function getRequiredHooks(): array {
 		return [
 			// Filters
 			'popcms:page:title',
 		];
 	}
 
-	public function getRequiredNames() {
+	/**
+     * @return string[]
+     */
+    public function getRequiredNames(): array {
 		return [
 			// DB Columns
 			'popcms:dbcolumn:orderby:pages:date',
